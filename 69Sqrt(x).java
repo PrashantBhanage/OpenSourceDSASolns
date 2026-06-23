@@ -1,28 +1,3 @@
-class Solution {
-    public int mySqrt(int x) {
-        int l = 0;
-        int r = x;
-        int ans = 0;
-
-        while(l<=r){
-            int mid= l+(r-l)/2;
-            long square = (long) mid * mid;
-
-            if(square == x){
-                return mid;
-            }
-
-            if(square < x){
-                ans = mid;
-                l = mid+1;
-            }else{
-                r = mid-1;
-            }
-        }
-        return ans;
-    }
-}    
-
 Approch 
 Brute force-
 For 69. Sqrt(x), brute force means:
@@ -55,32 +30,27 @@ class Solution {
         return x;
     }
 }
+
 How to think
 
 Ask:
-
 What are all possible answers?
 
 For sqrt:
-
 0, 1, 2, 3, 4, ...
 
 Then:
-
 Can I check whether an answer is correct?
 
 Yes:
-
 i * i <= x
 
 Then:
-
 Try all answers one by one.
 
 That's brute force.
 
 For x = 16
-
 0² = 0
 1² = 1
 2² = 4
@@ -91,20 +61,15 @@ For x = 16
 return 4
 
 Time Complexity:
-
 O(√x)
 
 because the loop effectively stops around the square root.
-
 After finding the brute force, then ask:
-
 Can I avoid checking every number?
-
 That question leads to Binary Search, which is the optimal solution for this problem. But always find the brute force first. That's how interviewers expect you to think.
 
 
 Optimal-
-
 The key observation:
 x = 81² = 12² = 43² = 9
 The answer lies between:
@@ -165,20 +130,25 @@ class Solution {
 }
 
 Why long?
+    
 If:
 x = 2147395599
+    
 then
 mid * mid
 can overflow an int.
+    
 So:
 long square = (long) mid * mid;
 prevents overflow.
 Pattern learned
 When you need:
 largest value satisfying a condition
+    
 such as:
 mid² <= x
 Binary Search is often the optimal approach.
+    
 Time Complexity:
 O(log x)
 Space Complexity:
