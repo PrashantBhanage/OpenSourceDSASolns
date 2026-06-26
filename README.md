@@ -33,15 +33,8 @@ Each solution may include:
 * Java Implementation
 * Notes and Observations
 
-## Topics Covered
+## Topics needs to Cover
 
-* Arrays
-* Strings
-* Hashing
-* Linked Lists
-* Stacks & Queues
-* Trees
-* Graphs
 * Binary Search
 * Recursion & Backtracking
 * Dynamic Programming
